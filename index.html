@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plein Cadre – Actualités et sport</title>
+<meta name="description" content="Plein Cadre : l'actualité et le sport en lecture rapide. Football, basket, tennis et l'essentiel de la journée.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F7F8FA;--surface:#fff;--ink:#14192B;--mute:#5B6378;--line:#DDE1EA;--blue:#2451FF;--red:#D7263D;--pitch:#0E7C5A;--adbg:#EEF0F5;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1220;--surface:#171C2E;--ink:#EDEFF6;--mute:#9AA3BA;--line:#2A3148;--blue:#7F9BFF;--red:#FF6B7D;--pitch:#3CCB9A;--adbg:#1B2136}}
+:root[data-theme="dark"]{--bg:#0E1220;--surface:#171C2E;--ink:#EDEFF6;--mute:#9AA3BA;--line:#2A3148;--blue:#7F9BFF;--red:#FF6B7D;--pitch:#3CCB9A;--adbg:#1B2136}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.6 Newsreader,Georgia,serif}
+h1,h2,h3,.brand,button,.tag{font-family:"Bricolage Grotesque",system-ui,sans-serif}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.top{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{font-weight:800;font-size:1.5rem;letter-spacing:-.03em;text-decoration:none}
+.brand span{color:var(--red)}
+nav{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px}
+nav button{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:99px;padding:6px 14px;font-size:.9rem;font-weight:600;cursor:pointer;white-space:nowrap}
+nav button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+button:focus-visible,a:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.lead{display:grid;gap:18px;padding:26px 0 8px}
+.lead article{cursor:pointer}
+.lead h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.05;letter-spacing:-.03em;margin:8px 0 10px;font-weight:800}
+.lead p{color:var(--mute);margin:0;max-width:60ch}
+.tag{font-size:.8rem;font-weight:800;color:var(--blue);text-transform:none}
+.tag.sport{color:var(--pitch)}
+.grid{display:grid;gap:14px;padding:18px 0 26px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;cursor:pointer}
+.card h3{margin:6px 0;font-size:1.15rem;line-height:1.25}
+.card p{margin:0;color:var(--mute);font-size:.98rem}
+.card:hover{border-color:var(--blue)}
+.ad{background:var(--adbg);border:1px dashed var(--line);border-radius:6px;min-height:100px;display:flex;align-items:center;justify-content:center;color:var(--mute);font:600 .75rem "Bricolage Grotesque",sans-serif;margin:14px 0}
+.ad.tall{min-height:250px}
+.read{display:none;padding:26px 0}
+.read.on{display:block}
+.read h1{font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.1;letter-spacing:-.02em;margin:8px 0}
+.read .body{max-width:66ch}
+.read.plain .ad,.read.plain .aff{display:none}
+.read .body h2{font-size:1.2rem;margin:22px 0 4px}
+.read .body li{margin:4px 0}
+.back{border:0;background:none;color:var(--blue);font-weight:700;font-size:1rem;cursor:pointer;padding:0 0 12px}
+.aff{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--pitch);border-radius:8px;padding:14px 16px;margin:18px 0;max-width:66ch}
+.aff b{font-family:"Bricolage Grotesque",sans-serif}
+.news{background:var(--ink);color:var(--bg);border-radius:12px;padding:24px;margin:10px 0 28px}
+.news h2{margin:0 0 6px;font-size:1.4rem}
+.news form{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.news input{flex:1 1 220px;padding:11px 12px;border-radius:8px;border:0;font:inherit;background:var(--bg);color:var(--ink)}
+.news button{padding:11px 18px;border:0;border-radius:8px;background:var(--red);color:#fff;font-weight:700;cursor:pointer}
+footer{border-top:1px solid var(--line);padding:20px 0 30px;color:var(--mute);font-size:.88rem}
+footer a{margin-right:14px}
+@media(min-width:760px){.lead{grid-template-columns:2fr 1fr;align-items:start}.grid{grid-template-columns:repeat(3,1fr)}}
+@media(prefers-reduced-motion:no-preference){.read.on{animation:in .25s ease-out}@keyframes in{from{opacity:0}to{opacity:1}}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="top"><a class="brand" href="#" id="home">Plein<span>Cadre</span></a><a href="/admin/" style="font:600 14px system-ui;color:var(--blue)">Administration</a></div>
+<nav id="nav" aria-label="Rubriques"></nav>
+</div></header>
+
+<main class="wrap">
+<div id="list">
+  <section class="lead" id="lead"></section>
+  <!-- PUB 1 : collez ici votre code AdSense (bannière) -->
+  <div class="ad" role="complementary" aria-label="Publicité">Publicité – emplacement bannière</div>
+  <section class="grid" id="grid"></section>
+  <div class="ad tall" role="complementary" aria-label="Publicité">Publicité – emplacement rectangle</div>
+  <section class="news">
+    <h2>L'essentiel chaque matin</h2>
+    <p style="margin:0">Cinq actus et les résultats sportifs de la veille, dans votre boîte mail.</p>
+    <form id="nl"><input type="email" required placeholder="Votre adresse e-mail" aria-label="Adresse e-mail"><button type="submit">S'inscrire</button></form>
+    <p id="nlmsg" style="margin:10px 0 0;font-size:.9rem"></p>
+  </section>
+</div>
+
+<article class="read" id="read">
+  <button class="back" id="back">← Retour aux articles</button>
+  <div class="tag" id="rtag"></div>
+  <h1 id="rtitle"></h1>
+  <div class="body" id="rbody"></div>
+  <!-- PUB 2 : dans l'article -->
+  <div class="ad tall" role="complementary" aria-label="Publicité">Publicité – dans l'article</div>
+  <div class="aff"><b>Pour suivre le sport en direct</b><br>Emplacement pour un lien d'affiliation (abonnement sportif, équipement, billetterie). <em>Lien sponsorisé.</em></div>
+</article>
+</main>
+
+<footer><div class="wrap">
+<a href="#" data-p="mentions">Mentions légales</a><a href="#" data-p="confidentialite">Confidentialité et cookies</a><a href="#" data-p="contact">Contact</a>
+<p>© 2026 Plein Cadre. Ce site affiche de la publicité et peut contenir des liens d'affiliation.</p>
+</div></footer>
+
+<script>
+var CATS=["Tout","Actualités","Football","Basket","Tennis"];
+var P="Texte d'exemple à remplacer par votre propre article. Rédigez des contenus originaux, vérifiés et sourcés : c'est ce qui fait revenir les lecteurs et que Google met en avant. Structurez avec des intertitres, répondez à une question précise et citez vos sources.";
+var A=[
+{c:"Football",t:"Mercato : Chris Smalling s'apprête à signer au FC Porto",d:"Libre depuis l'été, le défenseur anglais passe sa visite médicale.",b:"<p>Publié le 30 septembre 2026</p><p>Le défenseur central anglais Chris Smalling est sur le point de rejoindre le FC Porto. Le journaliste spécialiste des transferts Fabrizio Romano a indiqué mercredi que l'accord était trouvé et que le joueur passait sa visite médicale.</p><h2>Un joueur libre</h2><p>Smalling, ancien joueur de Manchester United, n'avait plus de club depuis le 1er juillet 2026, date de la fin de son contrat avec Al-Fayha, en Arabie saoudite. Il peut donc signer sans indemnité de transfert, même si le marché d'été est fermé.</p><h2>Un Porto en grande forme</h2><p>Le club portugais a remporté ses sept premiers matchs de championnat cette saison et compte cinq points d'avance sur Benfica, deuxième. L'expérience de Smalling doit renforcer sa défense.</p><p>À ce stade, il s'agit d'une information annoncée par la presse : attendez le communiqué officiel du club pour la confirmation définitive.</p><p><em>Sources : publications de Fabrizio Romano relayées par Foot Africa, Yahoo Sports et The Peoples Person (30 septembre 2026).</em></p>"},
+{c:"Football",t:"Portugal : Ronaldo quitte le rassemblement avant le match au Danemark",d:"Le capitaine annonce son départ après une semaine de tensions avec le sélectionneur.",b:"<p>Publié le 30 septembre 2026</p><p>Cristiano Ronaldo, 41 ans, a annoncé mercredi sur Instagram qu'il quittait le rassemblement de l'équipe du Portugal à Copenhague, à la veille du match de Ligue des nations contre le Danemark. Il ne s'était pas présenté à l'entraînement du jour.</p><h2>Ce qui s'est passé</h2><p>Laissé sur le banc dimanche lors du match en Norvège, l'attaquant dit avoir pris sa décision après la conférence de presse du sélectionneur Jorge Jesus et une discussion avec le président de la Fédération portugaise. Jorge Jesus avait pourtant tenté de minimiser tout incident, et expliqué son choix par un manque d'impact dans le pressing. Le président de la Fédération, Pedro Proença, s'est rendu en urgence à Copenhague pour gérer la situation.</p><h2>Et maintenant ?</h2><p>Ronaldo promet d'expliquer « en temps voulu » les raisons de son départ et souhaite bonne chance à ses coéquipiers. Selon la presse, il ne jouera donc pas les deux derniers matchs de Ligue des nations, au Danemark puis contre la Norvège le 4 octobre. Le sélectionneur compte titulariser Gonçalo Ramos en pointe.</p><p>Meilleur buteur de l'histoire de la sélection avec 146 buts, Ronaldo avait annoncé que cette année serait la dernière de sa carrière. Son avenir en équipe nationale reste donc une question ouverte.</p><p><em>Sources : franceinfo, L'Avenir, Footeo, Eurofootnews (30 septembre 2026).</em></p>"},
+{c:"Actualités",t:"Monde : les troupes américaines quittent l'Irak, frappes sur l'Ukraine",d:"Le point sur l'actualité internationale du 30 septembre 2026.",b:"<p>Publié le 30 septembre 2026</p><h2>Les derniers soldats américains quittent l'Irak</h2><p>Le commandement militaire américain a annoncé mercredi la fin du retrait de ses troupes d'Irak, après une présence de douze ans liée à la lutte contre le groupe État islamique. Ce calendrier, qui fixait la date finale au 30 septembre, avait été négocié avec Bagdad en 2024 et a été maintenu par l'administration actuelle. Le Premier ministre irakien a assisté à une cérémonie marquant la fin de la mission internationale contre l'EI.</p><h2>Ukraine : nouvelles frappes sur l'énergie</h2><p>D'après le président ukrainien, cinq personnes, dont un enfant, ont été tuées dans le pays. Kiev affirme que la Russie a intensifié ses attaques contre les infrastructures énergétiques, notamment dans la capitale et ses environs.</p><h2>Intelligence artificielle : des engagements volontaires</h2><p>Le président américain et plusieurs grands dirigeants du secteur technologique ont signé des règles de sécurité volontaires pour l'intelligence artificielle. Ces engagements ne sont pas contraignants, et la Maison-Blanche n'exclut pas une régulation plus tard.</p><h2>Commerce : les droits de douane sous tension</h2><p>Des responsables commerciaux du G20 se réunissent à Milwaukee, alors que les droits de douane américains et la question des surcapacités industrielles pèsent sur les relations entre grandes économies.</p><p><em>Sources : Democracy Now, ABC News, Just Security, WION (30 septembre 2026).</em></p>"},
+{c:"Actualités",t:"Fin septembre 2026 : ce qui a marqué la rentrée",d:"Service national, Nations unies, TGV M : les temps forts du mois.",b:"<p>Publié le 30 septembre 2026</p><p>Le mois de septembre a été chargé du côté de l'exécutif français. Le 15 septembre, le chef de l'État s'est rendu sur la base aérienne d'Orange pour y rencontrer la première promotion des appelés du Service national.</p><p>Une semaine plus tard, l'actualité s'est déplacée à New York, où s'est ouverte la 81ᵉ session de l'Assemblée générale des Nations unies. Le 24 septembre, le président a été interviewé sur TF1 et France 2.</p><h2>Au programme du mois</h2><p>La France assure en septembre la présidence du Conseil de sécurité de l'ONU. L'exploitation du TGV M par la SNCF doit débuter, et la Commission européenne doit annoncer des mesures pour restreindre l'usage des écrans chez les moins de 15 ans.</p><p><em>Sources : elysee.fr (rubrique actualités) et calendrier de la rentrée 2026 de la Fondation Jean-Jaurès.</em></p>"},
+{c:"Football",t:"Ligue des champions : les points à retenir de la soirée",d:"Le résumé rapide des matchs, des buteurs et des classements."},
+{c:"Actualités",t:"Ce qui change le 1er octobre pour votre budget",d:"Les nouvelles règles à connaître avant la fin du mois."},
+{c:"Basket",t:"Saison de basket : cinq équipes à suivre de près",d:"Les formations qui peuvent surprendre dès les premières journées."},
+{c:"Tennis",t:"Tennis : la course aux dernières places du classement",d:"Qui peut encore se qualifier et à quelles conditions."},
+{c:"Football",t:"Mercato : comment lire les rumeurs sans se tromper",d:"Sources fiables, annonces officielles et fausses pistes."},
+{c:"Actualités",t:"Météo de la semaine : à quoi s'attendre",d:"Les grandes tendances jour par jour, région par région."},
+{c:"Basket",t:"Les règles du basket expliquées simplement",d:"Fautes, temps de jeu, lancers francs : le guide pour débuter."}
+];
+var cur="Tout",nav=document.getElementById("nav"),list=document.getElementById("list"),rd=document.getElementById("read");
+function tg(c){return '<div class="tag'+(c==="Actualités"?'':' sport')+'">'+c+'</div>'}
+function draw(){
+  nav.innerHTML="";
+  CATS.forEach(function(c){var b=document.createElement("button");b.textContent=c;b.setAttribute("aria-pressed",c===cur);b.onclick=function(){cur=c;show(false);draw()};nav.appendChild(b)});
+  var items=A.map(function(a,i){a.i=i;return a}).filter(function(a){return cur==="Tout"||a.c===cur});
+  var L=document.getElementById("lead"),G=document.getElementById("grid");
+  L.innerHTML="";G.innerHTML="";
+  if(!items.length){G.textContent="Aucun article dans cette rubrique pour le moment.";return}
+  var f=items[0];
+  L.innerHTML='<article data-i="'+f.i+'">'+tg(f.c)+'<h1>'+f.t+'</h1><p>'+f.d+'</p></article>';
+  var side=document.createElement("div");side.className="ad tall";side.setAttribute("aria-label","Publicité");side.textContent="Publicité – emplacement latéral";L.appendChild(side);
+  items.slice(1).forEach(function(a){var d=document.createElement("div");d.className="card";d.dataset.i=a.i;d.innerHTML=tg(a.c)+'<h3>'+a.t+'</h3><p>'+a.d+'</p>';G.appendChild(d)});
+  document.querySelectorAll("[data-i]").forEach(function(e){e.onclick=function(){open(+e.dataset.i)}});
+}
+function open(i){var a=A[i];rd.classList.remove("plain");document.getElementById("rtag").outerHTML='<div class="tag'+(a.c==="Actualités"?'':' sport')+'" id="rtag">'+a.c+'</div>';
+  document.getElementById("rtitle").textContent=a.t;
+  document.getElementById("rbody").innerHTML=a.b||("<p>"+a.d+"</p><p>"+P+"</p><p>"+P+"</p>");
+  document.title=a.t+" – Plein Cadre";show(true);window.scrollTo(0,0)}
+function show(r){rd.classList.toggle("on",r);list.style.display=r?"none":"block";if(!r)document.title="Plein Cadre – Actualités et sport"}
+document.getElementById("back").onclick=function(){show(false)};
+document.getElementById("home").onclick=function(e){e.preventDefault();cur="Tout";show(false);draw()};
+document.getElementById("nl").onsubmit=function(e){e.preventDefault();document.getElementById("nlmsg").textContent="Merci ! Branchez ce formulaire à votre outil d'e-mailing pour recevoir les inscriptions."};
+var PG={
+mentions:{t:"Mentions légales",h:"<p>Les champs entre crochets sont à compléter avec vos informations réelles avant de mettre le site en ligne.</p><h2>Éditeur du site</h2><p>Plein Cadre, édité par François Kipili, Lubumbashi, province du Haut-Katanga, République démocratique du Congo.<br>E-mail : francoiskipili54@gmail.com</p><h2>Directeur de la publication</h2><p>François Kipili</p><h2>Hébergeur</h2><p>Netlify, Inc., 101 2nd Street, San Francisco, CA 94105, États-Unis, netlify.com.</p><h2>Propriété intellectuelle</h2><p>Les textes et contenus de ce site sont protégés. Toute reproduction sans autorisation écrite est interdite, sauf courte citation avec mention de la source.</p><h2>Liens et publicité</h2><p>Ce site affiche de la publicité et peut contenir des liens d'affiliation : nous pouvons percevoir une commission si vous achetez via ces liens, sans surcoût pour vous.</p>"},
+confidentialite:{t:"Confidentialité et cookies",h:"<p>Dernière mise à jour : 30 septembre 2026.</p><h2>Données que nous collectons</h2><ul><li>Votre adresse e-mail, uniquement si vous vous inscrivez à la newsletter.</li><li>Des données de navigation anonymisées (pages vues, appareil, pays) si vous utilisez un outil de mesure d'audience.</li></ul><h2>Publicité et cookies</h2><p>Nous utilisons Google AdSense pour afficher des publicités. Google et ses partenaires peuvent utiliser des cookies pour diffuser des annonces selon vos visites sur ce site et d'autres sites. Vous choisissez d'accepter ou de refuser ces cookies dans la fenêtre de consentement affichée lors de votre première visite, et vous pouvez modifier ce choix à tout moment.</p><p>Pour en savoir plus : policies.google.com/technologies/partner-sites. Pour régler la personnalisation des annonces : adssettings.google.com.</p><h2>Newsletter</h2><p>Votre e-mail sert uniquement à vous envoyer la newsletter. Chaque message contient un lien de désinscription.</p><h2>Vos droits</h2><p>Vous pouvez demander l'accès, la rectification ou la suppression de vos données en écrivant à francoiskipili54@gmail.com. Vous pouvez aussi saisir l'autorité de protection des données de votre pays (en France, la CNIL).</p><h2>Durée de conservation</h2><p>Les e-mails sont conservés jusqu'à votre désinscription. [Précisez la durée pour les autres données.]</p>"},
+contact:{t:"Contact",h:"<p>Une question, une correction à signaler, une proposition de partenariat ? Écrivez-nous, nous répondons sous quelques jours.</p><p><a href=\"mailto:francoiskipili54@gmail.com\">francoiskipili54@gmail.com</a></p>"}
+};
+function page(k){var p=PG[k];rd.classList.add("plain");document.getElementById("rtag").textContent="";document.getElementById("rtitle").textContent=p.t;document.getElementById("rbody").innerHTML=p.h;document.title=p.t+" – Plein Cadre";show(true);window.scrollTo(0,0)}
+document.querySelectorAll("[data-p]").forEach(function(e){e.onclick=function(ev){ev.preventDefault();page(e.dataset.p)}});
+fetch('/content/articles.json').then(function(r){if(!r.ok)throw new Error('no cms content');return r.json()}).then(function(data){
+  var items=Array.isArray(data)?data:(data.articles||[]);
+  if(Array.isArray(items)&&items.length){items.slice().reverse().forEach(function(x){A.unshift({c:x.category||'Actualités',t:x.title||'Sans titre',d:x.summary||'',b:'<p>'+((x.body||'').replace(/</g,'&lt;'))+'</p>',image:x.image||''})});draw()}
+}).catch(function(){/* Les articles intégrés restent affichés si le fichier CMS n'existe pas encore. */});
+draw();
+</script>
+</body>
+</html>

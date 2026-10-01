@@ -1,0 +1,14 @@
+PLEIN CADRE – MISE EN PLACE DU CMS
+
+Ce dossier est une base de déploiement. L'espace /admin utilise Decap CMS et GitHub pour enregistrer les articles dans le dépôt du site.
+
+IMPORTANT : l'authentification ne peut pas être activée sans connaître votre dépôt GitHub et sans autoriser la connexion OAuth. Le champ repo de admin/config.yml est volontairement un exemple à remplacer par NOM_UTILISATEUR/NOM_DEPOT. Ne partagez jamais votre mot de passe ou jeton secret dans le chat.
+
+Étapes :
+1. Créez ou utilisez un dépôt GitHub pour les fichiers du site.
+2. Remplacez VOTRE_NOM_GITHUB/VOTRE_DEPOT dans admin/config.yml par le propriétaire et le nom exacts du dépôt.
+3. Connectez ce dépôt à Netlify et publiez le contenu de ce dossier.
+4. Configurez le fournisseur OAuth GitHub pour Decap CMS/Netlify Identity selon le mode d'authentification choisi. Sans cette étape, /admin ne pourra pas se connecter.
+5. Une fois déployé, ouvrez https://pleincadre.netlify.app/admin/ et connectez-vous.
+
+Les articles créés dans le CMS sont stockés dans content/articles.json. Le site lit ce fichier et ajoute ces articles à la liste existante. L'authentification doit être activée avant de confier l'accès à d'autres personnes.

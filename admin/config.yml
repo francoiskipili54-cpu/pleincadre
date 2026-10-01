@@ -1,0 +1,28 @@
+backend:
+  name: github
+  repo: VOTRE_NOM_GITHUB/VOTRE_DEPOT
+  branch: main
+  # Après avoir configuré OAuth GitHub/Netlify, ajoutez ici les paramètres
+  # requis par votre fournisseur d'authentification si nécessaire.
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+site_url: https://pleincadre.netlify.app
+locale: fr
+collections:
+  - name: "articles"
+    label: "Articles"
+    files:
+      - name: "articles"
+        label: "Articles publiés"
+        file: "content/articles.json"
+        format: "json"
+        fields:
+          - label: "Articles"
+            name: "articles"
+            widget: "list"
+            fields:
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Catégorie", name: "category", widget: "select", options: ["Actualités", "Football", "Basket", "Tennis"]}
+              - {label: "Résumé", name: "summary", widget: "text"}
+              - {label: "Contenu", name: "body", widget: "markdown"}
+              - {label: "Image", name: "image", widget: "image", required: false}

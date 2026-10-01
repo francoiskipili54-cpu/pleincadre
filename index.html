@@ -1,175 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>FK TAKEOFF NEWS – L’information prend son envol</title>
-<meta name="description" content="FK TAKEOFF NEWS : l’actualité, le sport et les grands sujets du jour. L’information prend son envol.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07152f">
+<meta name="description" content="FK TAKEOFF NEWS — L'information prend son envol.">
+<title>FK TAKEOFF NEWS — L'information prend son envol</title>
 <style>
-:root{--bg:#F7F8FA;--surface:#fff;--ink:#14192B;--mute:#5B6378;--line:#DDE1EA;--blue:#2451FF;--red:#D7263D;--pitch:#0E7C5A;--adbg:#EEF0F5;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1220;--surface:#171C2E;--ink:#EDEFF6;--mute:#9AA3BA;--line:#2A3148;--blue:#7F9BFF;--red:#FF6B7D;--pitch:#3CCB9A;--adbg:#1B2136}}
-:root[data-theme="dark"]{--bg:#0E1220;--surface:#171C2E;--ink:#EDEFF6;--mute:#9AA3BA;--line:#2A3148;--blue:#7F9BFF;--red:#FF6B7D;--pitch:#3CCB9A;--adbg:#1B2136}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-*,*::before,*::after{box-sizing:inherit}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.6 Newsreader,Georgia,serif}
-h1,h2,h3,.brand,button,.tag{font-family:"Bricolage Grotesque",system-ui,sans-serif}
-a{color:inherit}
-.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
-.top{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-.brand{font-weight:800;font-size:1.5rem;letter-spacing:-.03em;text-decoration:none}
-.brand span{color:var(--red)}
-nav{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px}
-nav button{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:99px;padding:6px 14px;font-size:.9rem;font-weight:600;cursor:pointer;white-space:nowrap}
-nav button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-button:focus-visible,a:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
-.lead{display:grid;gap:18px;padding:26px 0 8px}
-.lead article{cursor:pointer}
-.lead h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.05;letter-spacing:-.03em;margin:8px 0 10px;font-weight:800}
-.lead p{color:var(--mute);margin:0;max-width:60ch}
-.tag{font-size:.8rem;font-weight:800;color:var(--blue);text-transform:none}
-.tag.sport{color:var(--pitch)}
-.grid{display:grid;gap:14px;padding:18px 0 26px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;cursor:pointer}
-.card h3{margin:6px 0;font-size:1.15rem;line-height:1.25}
-.card p{margin:0;color:var(--mute);font-size:.98rem}
-.card:hover{border-color:var(--blue)}
-.ad{background:var(--adbg);border:1px dashed var(--line);border-radius:6px;min-height:100px;display:flex;align-items:center;justify-content:center;color:var(--mute);font:600 .75rem "Bricolage Grotesque",sans-serif;margin:14px 0}
-.ad.tall{min-height:250px}
-.read{display:none;padding:26px 0}
-.read.on{display:block}
-.read h1{font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.1;letter-spacing:-.02em;margin:8px 0}
-.read .body{max-width:66ch}
-.read.plain .ad,.read.plain .aff{display:none}
-.read .body h2{font-size:1.2rem;margin:22px 0 4px}
-.read .body li{margin:4px 0}
-.back{border:0;background:none;color:var(--blue);font-weight:700;font-size:1rem;cursor:pointer;padding:0 0 12px}
-.aff{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--pitch);border-radius:8px;padding:14px 16px;margin:18px 0;max-width:66ch}
-.aff b{font-family:"Bricolage Grotesque",sans-serif}
-.news{background:var(--ink);color:var(--bg);border-radius:12px;padding:24px;margin:10px 0 28px}
-.news h2{margin:0 0 6px;font-size:1.4rem}
-.news form{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.news input{flex:1 1 220px;padding:11px 12px;border-radius:8px;border:0;font:inherit;background:var(--bg);color:var(--ink)}
-.news button{padding:11px 18px;border:0;border-radius:8px;background:var(--red);color:#fff;font-weight:700;cursor:pointer}
-footer{border-top:1px solid var(--line);padding:20px 0 30px;color:var(--mute);font-size:.88rem}
-footer a{margin-right:14px}
-@media(min-width:760px){.lead{grid-template-columns:2fr 1fr;align-items:start}.grid{grid-template-columns:repeat(3,1fr)}}
-@media(prefers-reduced-motion:no-preference){.read.on{animation:in .25s ease-out}@keyframes in{from{opacity:0}to{opacity:1}}}
-
-/* FK TAKEOFF NEWS — nouvelle identité visuelle */
-:root{--bg:#f4f6fa;--surface:#fff;--ink:#101a2e;--mute:#59677c;--line:#dce3ee;--blue:#246bfe;--red:#e5a72d;--pitch:#087f69;--adbg:#edf1f7}
-.brand{display:flex;align-items:center;gap:8px;font-size:1.18rem;letter-spacing:-.04em;color:var(--ink)}
-.brand span:last-child{color:var(--blue)}
-.brand .brand-mark{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:11px;background:#101a2e;color:#f5c45d;font-size:1rem;letter-spacing:-.05em}
-.welcome{padding:28px 0 10px;border-bottom:1px solid var(--line);margin-bottom:8px}
-.welcome .eyebrow{font:800 .72rem "Bricolage Grotesque",sans-serif;letter-spacing:.16em;color:var(--blue)}
-.welcome h1{font-size:clamp(2rem,6vw,3.25rem);line-height:1.04;letter-spacing:-.055em;margin:9px 0}
-.welcome h1 span{color:var(--blue)}
-.welcome p{color:var(--mute);max-width:52ch;margin:0 0 10px}
-.lead{padding-top:20px}
-.lead article{background:linear-gradient(135deg,#101a2e,#1b3764);color:#fff;border-radius:18px;padding:26px;min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 12px 30px rgba(16,26,46,.12)}
-.lead article .tag{color:#f5c45d}
-.lead article h1{font-size:clamp(1.8rem,5vw,2.8rem);margin:8px 0}
-.lead article p{color:#e0e7f3}
-.card{border-radius:15px;padding:18px;box-shadow:0 5px 18px rgba(16,26,46,.04);transition:transform .18s,border-color .18s}
-.card:hover{transform:translateY(-3px)}
-nav{padding:10px 0 13px}
-nav button{padding:8px 15px}
-.news{background:#101a2e;border-radius:18px}
-.news button{background:#f5c45d;color:#101a2e}
-footer{margin-top:10px}
-@media(min-width:760px){.welcome{padding:38px 0 18px}.lead article{min-height:340px}.grid{gap:18px}}
-
+:root{--navy:#07152f;--navy2:#0c2348;--blue:#1677ff;--gold:#f5bd42;--bg:#f5f7fb;--card:#fff;--text:#111b2e;--muted:#667085;--line:#e6eaf1;--radius:18px;--shadow:0 10px 35px rgba(7,21,47,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}button,input{font:inherit}.wrap{width:min(1180px,calc(100% - 32px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(7,21,47,.96);backdrop-filter:blur(12px);color:#fff;box-shadow:0 4px 20px rgba(0,0,0,.12)}.top{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:-.045em;font-size:1rem}.logo{width:48px;height:48px;display:block;flex:0 0 48px}.logo svg{width:100%;height:100%;display:block}.brand-copy{display:grid;grid-template-columns:auto auto;column-gap:5px;line-height:1}.brand-copy strong{color:#fff;font-size:1.02rem}.brand-copy em{font-style:normal;color:#54a0ff;font-size:1.02rem}.brand-copy small{grid-column:1/-1;margin-top:5px;color:#9fb1cb;font-size:.58rem;font-weight:600;letter-spacing:.02em}.tools{display:flex;gap:8px}.icon{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:#fff;width:42px;height:42px;border-radius:12px;cursor:pointer}
+nav{display:flex;gap:8px;overflow:auto;padding:0 0 12px;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav button{white-space:nowrap;border:0;border-radius:999px;padding:8px 15px;background:rgba(255,255,255,.09);color:#dce6f7;cursor:pointer}nav button.active{background:var(--gold);color:var(--navy);font-weight:800}
+.hero{padding:42px 0 24px}.eyebrow{font-size:.72rem;font-weight:900;letter-spacing:.16em;color:var(--blue)}h1,h2,h3{font-family:Georgia,serif;line-height:1.08;margin:0}.hero h1{font-size:clamp(2.4rem,7vw,5rem);letter-spacing:-.055em;max-width:850px;margin:9px 0 14px}.hero h1 span{color:var(--blue)}.hero p{max-width:650px;color:var(--muted);font-size:1.04rem;margin:0}.ticker{margin-top:24px;background:var(--navy);color:#fff;border-radius:14px;padding:10px 14px;display:flex;gap:12px;align-items:center;overflow:hidden}.ticker b{color:var(--gold);white-space:nowrap}.ticker span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:24px 0 14px}.section-head h2{font-size:1.7rem}.section-head small{color:var(--muted)}.lead{display:grid;grid-template-columns:1.55fr .85fr;gap:18px}.lead-main{min-height:350px;border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;justify-content:end;color:#fff;background:linear-gradient(135deg,rgba(7,21,47,.96),rgba(18,64,125,.93)),linear-gradient(45deg,#123,#456);box-shadow:var(--shadow);cursor:pointer}.tag{display:inline-flex;align-self:flex-start;padding:5px 10px;border-radius:999px;background:#eaf2ff;color:var(--blue);font-size:.72rem;font-weight:900}.lead-main .tag{background:var(--gold);color:var(--navy)}.lead-main h2{font-size:clamp(2rem,4vw,3.4rem);margin:10px 0}.lead-main p{margin:0;color:#dbe6f7}.side{display:grid;gap:18px}.mini{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:21px;box-shadow:0 5px 20px rgba(7,21,47,.04);cursor:pointer}.mini h3{font-size:1.35rem;margin:10px 0 7px}.mini p,.card p{color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:21px;min-height:190px;box-shadow:0 5px 20px rgba(7,21,47,.04);cursor:pointer;transition:.18s}.card:hover,.mini:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.card h3{font-size:1.4rem;margin:11px 0 8px}
+.ad{min-height:82px;margin:22px 0;border:1px dashed #cbd3e0;border-radius:14px;display:grid;place-items:center;color:#8a94a6;font-size:.8rem;background:#f9fafc}.newsletter{margin:28px 0;background:var(--navy);color:#fff;border-radius:var(--radius);padding:28px;display:flex;justify-content:space-between;gap:25px;align-items:center}.newsletter h2{font-size:1.8rem}.newsletter p{color:#c7d2e5;margin:7px 0 0}.form{display:flex;gap:8px;min-width:min(430px,100%)}.form input{min-width:0;flex:1;border:0;border-radius:10px;padding:12px}.form button{border:0;border-radius:10px;padding:12px 17px;background:var(--gold);color:var(--navy);font-weight:900;cursor:pointer}
+.read{display:none;padding:30px 0 50px;max-width:820px}.read.on{display:block}.back{border:0;background:none;color:var(--blue);font-weight:800;padding:0;cursor:pointer}.read h1{font-size:clamp(2.3rem,6vw,4.2rem);margin:15px 0}.body{font-size:1.06rem}.body p{margin:0 0 17px}.body h2{margin:28px 0 10px}.meta{color:var(--muted);font-size:.9rem;margin-bottom:20px}.hidden{display:none!important}
+.section-head h2{position:relative}.section-head h2:after{content:"";display:block;width:42px;height:3px;background:var(--gold);border-radius:99px;margin-top:7px}.lead-main:after{content:"FK TAKEOFF NEWS";position:absolute;top:20px;right:22px;font-size:.62rem;letter-spacing:.14em;font-weight:900;color:rgba(255,255,255,.42)}.lead-main{position:relative;overflow:hidden}.ticker{box-shadow:0 8px 22px rgba(7,21,47,.12)}
+footer{margin-top:20px;background:var(--navy);color:#bdc9dc;padding:28px 0}.footer-brand{color:#fff;font-weight:900}.footer-links{display:flex;flex-wrap:wrap;gap:16px;margin:13px 0}.footer-links a:hover{color:#fff}.copy{font-size:.82rem}.search{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:40;display:none;padding:80px 16px}.search.on{display:block}.search-box{max-width:650px;margin:auto;background:#fff;border-radius:18px;padding:18px}.search-box input{width:100%;border:1px solid var(--line);padding:14px;border-radius:12px}.result{padding:12px 0;border-bottom:1px solid var(--line);cursor:pointer}.result b{display:block}.result small{color:var(--muted)}
+.dark{--bg:#09111f;--card:#101b2e;--text:#eef3fb;--muted:#aab5c7;--line:#23314a}.dark .mini,.dark .card{box-shadow:none}.dark .ad{background:#0d1728;border-color:#31405a}.dark .search-box{background:#101b2e}
+@media(max-width:800px){.wrap{width:min(100% - 22px,1180px)}.top{min-height:65px}.brand{font-size:1rem}.mark{width:38px;height:38px}.lead{grid-template-columns:1fr}.lead-main{min-height:330px}.grid{grid-template-columns:1fr 1fr}.newsletter{display:block}.form{margin-top:18px}}
+@media(max-width:520px){.brand-copy small{display:none}.brand-copy strong,.brand-copy em{font-size:.92rem}.logo{width:43px;height:43px;flex-basis:43px}.hero{padding-top:30px}.hero h1{font-size:2.55rem}.grid{grid-template-columns:1fr}.lead-main{padding:22px}.lead-main h2{font-size:2rem}.form{display:block}.form input,.form button{width:100%}.form button{margin-top:8px}}
 </style>
 </head>
 <body>
-<header><div class="wrap">
-<div class="top"><a class="brand" href="#" id="home" aria-label="FK TAKEOFF NEWS, accueil"><span class="brand-mark">FK</span> TAKEOFF <span>NEWS</span></a></div>
-<nav id="nav" aria-label="Rubriques"></nav>
-</div></header>
-
-<main class="wrap">
-<div id="list">
-  <section class="welcome"><div class="eyebrow">LE MONDE EN UN REGARD</div><h1>L’information prend <span>son envol.</span></h1><p>Les faits, les idées et les histoires qui comptent. Suivez l’actualité et le sport, en toute clarté.</p></section>
-  <section class="lead" id="lead"></section>
-  <!-- PUB 1 : collez ici votre code AdSense (bannière) -->
-  <div class="ad" role="complementary" aria-label="Publicité">Publicité – emplacement bannière</div>
-  <section class="grid" id="grid"></section>
-  <div class="ad tall" role="complementary" aria-label="Publicité">Publicité – emplacement rectangle</div>
-  <section class="news">
-    <h2>L'essentiel chaque matin</h2>
-    <p style="margin:0">Cinq actus et les résultats sportifs de la veille, dans votre boîte mail.</p>
-    <form id="nl"><input type="email" required placeholder="Votre adresse e-mail" aria-label="Adresse e-mail"><button type="submit">S'inscrire</button></form>
-    <p id="nlmsg" style="margin:10px 0 0;font-size:.9rem"></p>
-  </section>
-</div>
-
-<article class="read" id="read">
-  <button class="back" id="back">← Retour aux articles</button>
-  <div class="tag" id="rtag"></div>
-  <h1 id="rtitle"></h1>
-  <div class="body" id="rbody"></div>
-  <!-- PUB 2 : dans l'article -->
-  <div class="ad tall" role="complementary" aria-label="Publicité">Publicité – dans l'article</div>
-  <div class="aff"><b>Pour suivre le sport en direct</b><br>Emplacement pour un lien d'affiliation (abonnement sportif, équipement, billetterie). <em>Lien sponsorisé.</em></div>
-</article>
+<header><div class="wrap"><div class="top"><a class="brand" href="#" id="home" aria-label="FK TAKEOFF NEWS — accueil"><span class="logo" aria-hidden="true"><svg viewBox="0 0 72 72" role="img"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f5bd42"/><stop offset="1" stop-color="#ffe6a1"/></linearGradient></defs><rect x="2" y="2" width="68" height="68" rx="19" fill="#07152f" stroke="#f5bd42" stroke-width="2"/><path d="M18 45 53 18 42 48l-9-8-15 5Z" fill="url(#lg)"/><path d="M33 40 53 18 41 31Z" fill="#fff" opacity=".9"/><text x="10" y="61" font-family="Arial,sans-serif" font-size="10" font-weight="900" fill="#fff">FK</text></svg></span><span class="brand-copy"><strong>FK TAKEOFF</strong><em>NEWS</em><small>L'information prend son envol</small></span></a><div class="tools"><button class="icon" id="searchBtn" aria-label="Rechercher">⌕</button><button class="icon" id="themeBtn" aria-label="Changer le thème">☾</button></div></div><nav id="nav"></nav></div></header>
+<main class="wrap" id="homeView">
+<section class="hero"><div class="eyebrow">ÉDITION DIGITALE • RDC & MONDE</div><h1>L'information prend <span>son envol.</span></h1><p>Les actualités, le sport et les histoires qui comptent — présentés simplement, rapidement et clairement.</p><div class="ticker"><b>À LA UNE</b><span id="tickerText">Suivez les dernières informations et les grands rendez-vous sportifs.</span></div></section>
+<div class="section-head"><h2>À la une</h2><small id="count"></small></div>
+<section class="lead" id="lead"></section>
+<div class="ad">EMPLACEMENT PUBLICITAIRE</div>
+<div class="section-head"><h2>Dernières actualités</h2><small>Mis à jour régulièrement</small></div>
+<section class="grid" id="grid"></section>
+<section class="newsletter"><div><h2>L'essentiel dans votre boîte mail.</h2><p>Inscrivez-vous à la newsletter de FK TAKEOFF NEWS.</p></div><form class="form" id="nl"><input type="email" required placeholder="Votre adresse e-mail"><button>S'inscrire</button></form></section>
 </main>
-
-<footer><div class="wrap">
-<a href="#" data-p="mentions">Mentions légales</a><a href="#" data-p="confidentialite">Confidentialité et cookies</a><a href="#" data-p="contact">Contact</a>
-<p>© 2026 FK TAKEOFF NEWS. L’information prend son envol. Ce site peut afficher de la publicité et contenir des liens d’affiliation.</p>
-</div></footer>
-
+<main class="wrap read" id="read"><button class="back" id="back">← Retour aux actualités</button><div id="readTag" class="tag" style="margin-top:24px"></div><h1 id="readTitle"></h1><div id="readMeta" class="meta"></div><div id="readBody" class="body"></div><div class="ad">EMPLACEMENT PUBLICITAIRE</div></main>
+<footer><div class="wrap"><div class="footer-brand">FK TAKEOFF NEWS</div><div class="footer-links"><a href="#" data-page="mentions">Mentions légales</a><a href="#" data-page="privacy">Confidentialité</a><a href="mailto:francoiskipili54@gmail.com">Contact</a></div><div class="copy">© 2026 FK TAKEOFF NEWS — L'information prend son envol.</div></div></footer>
+<div class="search" id="search"><div class="search-box"><button class="back" id="closeSearch">✕ Fermer</button><input id="searchInput" placeholder="Rechercher une actualité…"><div id="results"></div></div></div>
 <script>
-var CATS=["Tout","Actualités","Football","Basket","Tennis"];
-var P="Texte d'exemple à remplacer par votre propre article. Rédigez des contenus originaux, vérifiés et sourcés : c'est ce qui fait revenir les lecteurs et que Google met en avant. Structurez avec des intertitres, répondez à une question précise et citez vos sources.";
-var A=[
-{c:"Football",t:"Mercato : Chris Smalling s'apprête à signer au FC Porto",d:"Libre depuis l'été, le défenseur anglais passe sa visite médicale.",b:"<p>Publié le 30 septembre 2026</p><p>Le défenseur central anglais Chris Smalling est sur le point de rejoindre le FC Porto. Le journaliste spécialiste des transferts Fabrizio Romano a indiqué mercredi que l'accord était trouvé et que le joueur passait sa visite médicale.</p><h2>Un joueur libre</h2><p>Smalling, ancien joueur de Manchester United, n'avait plus de club depuis le 1er juillet 2026, date de la fin de son contrat avec Al-Fayha, en Arabie saoudite. Il peut donc signer sans indemnité de transfert, même si le marché d'été est fermé.</p><h2>Un Porto en grande forme</h2><p>Le club portugais a remporté ses sept premiers matchs de championnat cette saison et compte cinq points d'avance sur Benfica, deuxième. L'expérience de Smalling doit renforcer sa défense.</p><p>À ce stade, il s'agit d'une information annoncée par la presse : attendez le communiqué officiel du club pour la confirmation définitive.</p><p><em>Sources : publications de Fabrizio Romano relayées par Foot Africa, Yahoo Sports et The Peoples Person (30 septembre 2026).</em></p>"},
-{c:"Football",t:"Portugal : Ronaldo quitte le rassemblement avant le match au Danemark",d:"Le capitaine annonce son départ après une semaine de tensions avec le sélectionneur.",b:"<p>Publié le 30 septembre 2026</p><p>Cristiano Ronaldo, 41 ans, a annoncé mercredi sur Instagram qu'il quittait le rassemblement de l'équipe du Portugal à Copenhague, à la veille du match de Ligue des nations contre le Danemark. Il ne s'était pas présenté à l'entraînement du jour.</p><h2>Ce qui s'est passé</h2><p>Laissé sur le banc dimanche lors du match en Norvège, l'attaquant dit avoir pris sa décision après la conférence de presse du sélectionneur Jorge Jesus et une discussion avec le président de la Fédération portugaise. Jorge Jesus avait pourtant tenté de minimiser tout incident, et expliqué son choix par un manque d'impact dans le pressing. Le président de la Fédération, Pedro Proença, s'est rendu en urgence à Copenhague pour gérer la situation.</p><h2>Et maintenant ?</h2><p>Ronaldo promet d'expliquer « en temps voulu » les raisons de son départ et souhaite bonne chance à ses coéquipiers. Selon la presse, il ne jouera donc pas les deux derniers matchs de Ligue des nations, au Danemark puis contre la Norvège le 4 octobre. Le sélectionneur compte titulariser Gonçalo Ramos en pointe.</p><p>Meilleur buteur de l'histoire de la sélection avec 146 buts, Ronaldo avait annoncé que cette année serait la dernière de sa carrière. Son avenir en équipe nationale reste donc une question ouverte.</p><p><em>Sources : franceinfo, L'Avenir, Footeo, Eurofootnews (30 septembre 2026).</em></p>"},
-{c:"Actualités",t:"Monde : les troupes américaines quittent l'Irak, frappes sur l'Ukraine",d:"Le point sur l'actualité internationale du 30 septembre 2026.",b:"<p>Publié le 30 septembre 2026</p><h2>Les derniers soldats américains quittent l'Irak</h2><p>Le commandement militaire américain a annoncé mercredi la fin du retrait de ses troupes d'Irak, après une présence de douze ans liée à la lutte contre le groupe État islamique. Ce calendrier, qui fixait la date finale au 30 septembre, avait été négocié avec Bagdad en 2024 et a été maintenu par l'administration actuelle. Le Premier ministre irakien a assisté à une cérémonie marquant la fin de la mission internationale contre l'EI.</p><h2>Ukraine : nouvelles frappes sur l'énergie</h2><p>D'après le président ukrainien, cinq personnes, dont un enfant, ont été tuées dans le pays. Kiev affirme que la Russie a intensifié ses attaques contre les infrastructures énergétiques, notamment dans la capitale et ses environs.</p><h2>Intelligence artificielle : des engagements volontaires</h2><p>Le président américain et plusieurs grands dirigeants du secteur technologique ont signé des règles de sécurité volontaires pour l'intelligence artificielle. Ces engagements ne sont pas contraignants, et la Maison-Blanche n'exclut pas une régulation plus tard.</p><h2>Commerce : les droits de douane sous tension</h2><p>Des responsables commerciaux du G20 se réunissent à Milwaukee, alors que les droits de douane américains et la question des surcapacités industrielles pèsent sur les relations entre grandes économies.</p><p><em>Sources : Democracy Now, ABC News, Just Security, WION (30 septembre 2026).</em></p>"},
-{c:"Actualités",t:"Fin septembre 2026 : ce qui a marqué la rentrée",d:"Service national, Nations unies, TGV M : les temps forts du mois.",b:"<p>Publié le 30 septembre 2026</p><p>Le mois de septembre a été chargé du côté de l'exécutif français. Le 15 septembre, le chef de l'État s'est rendu sur la base aérienne d'Orange pour y rencontrer la première promotion des appelés du Service national.</p><p>Une semaine plus tard, l'actualité s'est déplacée à New York, où s'est ouverte la 81ᵉ session de l'Assemblée générale des Nations unies. Le 24 septembre, le président a été interviewé sur TF1 et France 2.</p><h2>Au programme du mois</h2><p>La France assure en septembre la présidence du Conseil de sécurité de l'ONU. L'exploitation du TGV M par la SNCF doit débuter, et la Commission européenne doit annoncer des mesures pour restreindre l'usage des écrans chez les moins de 15 ans.</p><p><em>Sources : elysee.fr (rubrique actualités) et calendrier de la rentrée 2026 de la Fondation Jean-Jaurès.</em></p>"},
-{c:"Football",t:"Ligue des champions : les points à retenir de la soirée",d:"Le résumé rapide des matchs, des buteurs et des classements."},
-{c:"Actualités",t:"Ce qui change le 1er octobre pour votre budget",d:"Les nouvelles règles à connaître avant la fin du mois."},
-{c:"Basket",t:"Saison de basket : cinq équipes à suivre de près",d:"Les formations qui peuvent surprendre dès les premières journées."},
-{c:"Tennis",t:"Tennis : la course aux dernières places du classement",d:"Qui peut encore se qualifier et à quelles conditions."},
-{c:"Football",t:"Mercato : comment lire les rumeurs sans se tromper",d:"Sources fiables, annonces officielles et fausses pistes."},
-{c:"Actualités",t:"Météo de la semaine : à quoi s'attendre",d:"Les grandes tendances jour par jour, région par région."},
-{c:"Basket",t:"Les règles du basket expliquées simplement",d:"Fautes, temps de jeu, lancers francs : le guide pour débuter."}
+const articles=[
+{c:'Football',t:"Mercato : les mouvements à suivre cette semaine",d:"Les principales informations et annonces à surveiller dans le monde du football.",date:'1 octobre 2026'},
+{c:'Actualités',t:"RDC : les informations à suivre aujourd'hui",d:"Un résumé clair des sujets qui font l'actualité, à compléter avec vos sources vérifiées.",date:'1 octobre 2026'},
+{c:'Football',t:"Football : les grands rendez-vous du week-end",d:"Calendrier, affiches et éléments à connaître avant les rencontres.",date:'30 septembre 2026'},
+{c:'Basket',t:"Basket : les équipes à suivre cette saison",d:"Les formations et joueurs qui pourraient marquer les prochaines journées.",date:'30 septembre 2026'},
+{c:'Tennis',t:"Tennis : la course au classement continue",d:"Les principaux enjeux de la période et les résultats à retenir.",date:'30 septembre 2026'},
+{c:'Culture',t:"Musique : les sorties et artistes à découvrir",d:"Une sélection de nouveautés et de tendances musicales.",date:'29 septembre 2026'},
+{c:'Technologie',t:"Technologie : les nouveautés qui changent nos usages",d:"Applications, smartphones et innovations à suivre.",date:'29 septembre 2026'},
+{c:'Actualités',t:"Comprendre l'information en quelques minutes",d:"Comment vérifier une information et distinguer une annonce d'une rumeur.",date:'28 septembre 2026'}
 ];
-var cur="Tout",nav=document.getElementById("nav"),list=document.getElementById("list"),rd=document.getElementById("read");
-function tg(c){return '<div class="tag'+(c==="Actualités"?'':' sport')+'">'+c+'</div>'}
-function draw(){
-  nav.innerHTML="";
-  CATS.forEach(function(c){var b=document.createElement("button");b.textContent=c;b.setAttribute("aria-pressed",c===cur);b.onclick=function(){cur=c;show(false);draw()};nav.appendChild(b)});
-  var items=A.map(function(a,i){a.i=i;return a}).filter(function(a){return cur==="Tout"||a.c===cur});
-  var L=document.getElementById("lead"),G=document.getElementById("grid");
-  L.innerHTML="";G.innerHTML="";
-  if(!items.length){G.textContent="Aucun article dans cette rubrique pour le moment.";return}
-  var f=items[0];
-  L.innerHTML='<article data-i="'+f.i+'">'+tg(f.c)+'<h1>'+f.t+'</h1><p>'+f.d+'</p></article>';
-  var side=document.createElement("div");side.className="ad tall";side.setAttribute("aria-label","Publicité");side.textContent="Publicité – emplacement latéral";L.appendChild(side);
-  items.slice(1).forEach(function(a){var d=document.createElement("div");d.className="card";d.dataset.i=a.i;d.innerHTML=tg(a.c)+'<h3>'+a.t+'</h3><p>'+a.d+'</p>';G.appendChild(d)});
-  document.querySelectorAll("[data-i]").forEach(function(e){e.onclick=function(){open(+e.dataset.i)}});
-}
-function open(i){var a=A[i];rd.classList.remove("plain");document.getElementById("rtag").outerHTML='<div class="tag'+(a.c==="Actualités"?'':' sport')+'" id="rtag">'+a.c+'</div>';
-  document.getElementById("rtitle").textContent=a.t;
-  document.getElementById("rbody").innerHTML=a.b||("<p>"+a.d+"</p><p>"+P+"</p><p>"+P+"</p>");
-  document.title=a.t+" – FK TAKEOFF NEWS";show(true);window.scrollTo(0,0)}
-function show(r){rd.classList.toggle("on",r);list.style.display=r?"none":"block";if(!r)document.title="FK TAKEOFF NEWS – L’information prend son envol"}
-document.getElementById("back").onclick=function(){show(false)};
-document.getElementById("home").onclick=function(e){e.preventDefault();cur="Tout";show(false);draw()};
-document.getElementById("nl").onsubmit=function(e){e.preventDefault();document.getElementById("nlmsg").textContent="Merci ! Branchez ce formulaire à votre outil d'e-mailing pour recevoir les inscriptions."};
-var PG={
-mentions:{t:"Mentions légales",h:"<p>Les champs entre crochets sont à compléter avec vos informations réelles avant de mettre le site en ligne.</p><h2>Éditeur du site</h2><p>Plein Cadre, édité par François Kipili, Lubumbashi, province du Haut-Katanga, République démocratique du Congo.<br>E-mail : francoiskipili54@gmail.com</p><h2>Directeur de la publication</h2><p>François Kipili</p><h2>Hébergeur</h2><p>Netlify, Inc., 101 2nd Street, San Francisco, CA 94105, États-Unis, netlify.com.</p><h2>Propriété intellectuelle</h2><p>Les textes et contenus de ce site sont protégés. Toute reproduction sans autorisation écrite est interdite, sauf courte citation avec mention de la source.</p><h2>Liens et publicité</h2><p>Ce site affiche de la publicité et peut contenir des liens d'affiliation : nous pouvons percevoir une commission si vous achetez via ces liens, sans surcoût pour vous.</p>"},
-confidentialite:{t:"Confidentialité et cookies",h:"<p>Dernière mise à jour : 30 septembre 2026.</p><h2>Données que nous collectons</h2><ul><li>Votre adresse e-mail, uniquement si vous vous inscrivez à la newsletter.</li><li>Des données de navigation anonymisées (pages vues, appareil, pays) si vous utilisez un outil de mesure d'audience.</li></ul><h2>Publicité et cookies</h2><p>Nous utilisons Google AdSense pour afficher des publicités. Google et ses partenaires peuvent utiliser des cookies pour diffuser des annonces selon vos visites sur ce site et d'autres sites. Vous choisissez d'accepter ou de refuser ces cookies dans la fenêtre de consentement affichée lors de votre première visite, et vous pouvez modifier ce choix à tout moment.</p><p>Pour en savoir plus : policies.google.com/technologies/partner-sites. Pour régler la personnalisation des annonces : adssettings.google.com.</p><h2>Newsletter</h2><p>Votre e-mail sert uniquement à vous envoyer la newsletter. Chaque message contient un lien de désinscription.</p><h2>Vos droits</h2><p>Vous pouvez demander l'accès, la rectification ou la suppression de vos données en écrivant à francoiskipili54@gmail.com. Vous pouvez aussi saisir l'autorité de protection des données de votre pays (en France, la CNIL).</p><h2>Durée de conservation</h2><p>Les e-mails sont conservés jusqu'à votre désinscription. [Précisez la durée pour les autres données.]</p>"},
-contact:{t:"Contact",h:"<p>Une question, une correction à signaler, une proposition de partenariat ? Écrivez-nous, nous répondons sous quelques jours.</p><p><a href=\"mailto:francoiskipili54@gmail.com\">francoiskipili54@gmail.com</a></p>"}
-};
-function page(k){var p=PG[k];rd.classList.add("plain");document.getElementById("rtag").textContent="";document.getElementById("rtitle").textContent=p.t;document.getElementById("rbody").innerHTML=p.h;document.title=p.t+" – FK TAKEOFF NEWS";show(true);window.scrollTo(0,0)}
-document.querySelectorAll("[data-p]").forEach(function(e){e.onclick=function(ev){ev.preventDefault();page(e.dataset.p)}});
-draw();
+let current='Tout';
+const nav=document.getElementById('nav');
+function cats(){return ['Tout','Actualités','Football','Basket','Tennis','Culture','Technologie']}
+function drawNav(){nav.innerHTML='';cats().forEach(c=>{const b=document.createElement('button');b.textContent=c;b.className=c===current?'active':'';b.onclick=()=>{current=c;draw()};nav.appendChild(b)})}
+function card(a,i,cls='card'){return `<article class="${cls}" data-id="${i}"><span class="tag">${a.c}</span><h3>${a.t}</h3><p>${a.d}</p></article>`}
+function draw(){drawNav();const list=articles.map((a,i)=>({...a,i})).filter(a=>current==='Tout'||a.c===current);document.getElementById('count').textContent=list.length+' article'+(list.length>1?'s':'');const lead=document.getElementById('lead'),grid=document.getElementById('grid');if(!list.length){lead.innerHTML='';grid.innerHTML='<p>Aucun article dans cette rubrique pour le moment.</p>';return}const a=list[0];lead.innerHTML=`<article class="lead-main" data-id="${a.i}"><span class="tag">${a.c}</span><h2>${a.t}</h2><p>${a.d}</p></article><div class="side">${list.slice(1,3).map(x=>card(x,x.i,'mini')).join('')}</div>`;grid.innerHTML=list.slice(3).map(x=>card(x,x.i)).join('');document.querySelectorAll('[data-id]').forEach(e=>e.onclick=()=>openArticle(+e.dataset.id));document.getElementById('tickerText').textContent=a.t}
+function openArticle(i){const a=articles[i];document.getElementById('homeView').classList.add('hidden');document.getElementById('read').classList.add('on');document.getElementById('readTag').textContent=a.c;document.getElementById('readTitle').textContent=a.t;document.getElementById('readMeta').textContent='Publié le '+a.date+' · FK TAKEOFF NEWS';document.getElementById('readBody').innerHTML=`<p>${a.d}</p><p>Cette page est prête à recevoir votre article complet. Ajoutez ici les faits vérifiés, les déclarations des personnes concernées et les sources utilisées. Évitez de présenter une rumeur comme une information confirmée.</p><h2>À retenir</h2><p>Présentez les éléments essentiels de manière claire et donnez au lecteur le contexte nécessaire pour comprendre le sujet.</p>`;window.scrollTo(0,0);document.title=a.t+' — FK TAKEOFF NEWS'}
+function home(){document.getElementById('read').classList.remove('on');document.getElementById('homeView').classList.remove('hidden');document.title="FK TAKEOFF NEWS — L'information prend son envol";window.scrollTo(0,0)}
+document.getElementById('home').onclick=e=>{e.preventDefault();current='Tout';draw();home()};document.getElementById('back').onclick=home;
+document.getElementById('nl').onsubmit=e=>{e.preventDefault();e.target.querySelector('button').textContent='Inscrit ✓';e.target.querySelector('input').value=''};
+document.getElementById('themeBtn').onclick=()=>document.body.classList.toggle('dark');
+const search=document.getElementById('search'),input=document.getElementById('searchInput'),results=document.getElementById('results');document.getElementById('searchBtn').onclick=()=>{search.classList.add('on');input.focus()};document.getElementById('closeSearch').onclick=()=>search.classList.remove('on');input.oninput=()=>{const q=input.value.toLowerCase().trim();const r=articles.map((a,i)=>({...a,i})).filter(a=>!q||(a.t+' '+a.d+' '+a.c).toLowerCase().includes(q)).slice(0,7);results.innerHTML=r.map(a=>`<div class="result" data-id="${a.i}"><b>${a.t}</b><small>${a.c} · ${a.date}</small></div>`).join('')||'<p>Aucun résultat.</p>';results.querySelectorAll('[data-id]').forEach(e=>e.onclick=()=>{search.classList.remove('on');openArticle(+e.dataset.id)})};
+document.querySelectorAll('[data-page]').forEach(e=>e.onclick=ev=>{ev.preventDefault();alert(e.dataset.page==='mentions'?'Mentions légales à compléter avec vos informations officielles.':'Politique de confidentialité à compléter selon les services réellement utilisés.')});draw();
 </script>
-</body>
-</html>
+</body></html>

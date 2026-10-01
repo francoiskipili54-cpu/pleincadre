@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Plein Cadre – Actualités et sport</title>
-<meta name="description" content="Plein Cadre : l'actualité et le sport en lecture rapide. Football, basket, tennis et l'essentiel de la journée.">
+<title>FK TAKEOFF NEWS – L’information prend son envol</title>
+<meta name="description" content="FK TAKEOFF NEWS : l’actualité, le sport et les grands sujets du jour. L’information prend son envol.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
 <style>
@@ -58,16 +58,42 @@ footer{border-top:1px solid var(--line);padding:20px 0 30px;color:var(--mute);fo
 footer a{margin-right:14px}
 @media(min-width:760px){.lead{grid-template-columns:2fr 1fr;align-items:start}.grid{grid-template-columns:repeat(3,1fr)}}
 @media(prefers-reduced-motion:no-preference){.read.on{animation:in .25s ease-out}@keyframes in{from{opacity:0}to{opacity:1}}}
+
+/* FK TAKEOFF NEWS — nouvelle identité visuelle */
+:root{--bg:#f4f6fa;--surface:#fff;--ink:#101a2e;--mute:#59677c;--line:#dce3ee;--blue:#246bfe;--red:#e5a72d;--pitch:#087f69;--adbg:#edf1f7}
+.brand{display:flex;align-items:center;gap:8px;font-size:1.18rem;letter-spacing:-.04em;color:var(--ink)}
+.brand span:last-child{color:var(--blue)}
+.brand .brand-mark{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:11px;background:#101a2e;color:#f5c45d;font-size:1rem;letter-spacing:-.05em}
+.welcome{padding:28px 0 10px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.welcome .eyebrow{font:800 .72rem "Bricolage Grotesque",sans-serif;letter-spacing:.16em;color:var(--blue)}
+.welcome h1{font-size:clamp(2rem,6vw,3.25rem);line-height:1.04;letter-spacing:-.055em;margin:9px 0}
+.welcome h1 span{color:var(--blue)}
+.welcome p{color:var(--mute);max-width:52ch;margin:0 0 10px}
+.lead{padding-top:20px}
+.lead article{background:linear-gradient(135deg,#101a2e,#1b3764);color:#fff;border-radius:18px;padding:26px;min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 12px 30px rgba(16,26,46,.12)}
+.lead article .tag{color:#f5c45d}
+.lead article h1{font-size:clamp(1.8rem,5vw,2.8rem);margin:8px 0}
+.lead article p{color:#e0e7f3}
+.card{border-radius:15px;padding:18px;box-shadow:0 5px 18px rgba(16,26,46,.04);transition:transform .18s,border-color .18s}
+.card:hover{transform:translateY(-3px)}
+nav{padding:10px 0 13px}
+nav button{padding:8px 15px}
+.news{background:#101a2e;border-radius:18px}
+.news button{background:#f5c45d;color:#101a2e}
+footer{margin-top:10px}
+@media(min-width:760px){.welcome{padding:38px 0 18px}.lead article{min-height:340px}.grid{gap:18px}}
+
 </style>
 </head>
 <body>
 <header><div class="wrap">
-<div class="top"><a class="brand" href="#" id="home">Plein<span>Cadre</span></a><a href="/admin/" style="font:600 14px system-ui;color:var(--blue)">Administration</a></div>
+<div class="top"><a class="brand" href="#" id="home" aria-label="FK TAKEOFF NEWS, accueil"><span class="brand-mark">FK</span> TAKEOFF <span>NEWS</span></a></div>
 <nav id="nav" aria-label="Rubriques"></nav>
 </div></header>
 
 <main class="wrap">
 <div id="list">
+  <section class="welcome"><div class="eyebrow">LE MONDE EN UN REGARD</div><h1>L’information prend <span>son envol.</span></h1><p>Les faits, les idées et les histoires qui comptent. Suivez l’actualité et le sport, en toute clarté.</p></section>
   <section class="lead" id="lead"></section>
   <!-- PUB 1 : collez ici votre code AdSense (bannière) -->
   <div class="ad" role="complementary" aria-label="Publicité">Publicité – emplacement bannière</div>
@@ -94,7 +120,7 @@ footer a{margin-right:14px}
 
 <footer><div class="wrap">
 <a href="#" data-p="mentions">Mentions légales</a><a href="#" data-p="confidentialite">Confidentialité et cookies</a><a href="#" data-p="contact">Contact</a>
-<p>© 2026 Plein Cadre. Ce site affiche de la publicité et peut contenir des liens d'affiliation.</p>
+<p>© 2026 FK TAKEOFF NEWS. L’information prend son envol. Ce site peut afficher de la publicité et contenir des liens d’affiliation.</p>
 </div></footer>
 
 <script>
@@ -131,8 +157,8 @@ function draw(){
 function open(i){var a=A[i];rd.classList.remove("plain");document.getElementById("rtag").outerHTML='<div class="tag'+(a.c==="Actualités"?'':' sport')+'" id="rtag">'+a.c+'</div>';
   document.getElementById("rtitle").textContent=a.t;
   document.getElementById("rbody").innerHTML=a.b||("<p>"+a.d+"</p><p>"+P+"</p><p>"+P+"</p>");
-  document.title=a.t+" – Plein Cadre";show(true);window.scrollTo(0,0)}
-function show(r){rd.classList.toggle("on",r);list.style.display=r?"none":"block";if(!r)document.title="Plein Cadre – Actualités et sport"}
+  document.title=a.t+" – FK TAKEOFF NEWS";show(true);window.scrollTo(0,0)}
+function show(r){rd.classList.toggle("on",r);list.style.display=r?"none":"block";if(!r)document.title="FK TAKEOFF NEWS – L’information prend son envol"}
 document.getElementById("back").onclick=function(){show(false)};
 document.getElementById("home").onclick=function(e){e.preventDefault();cur="Tout";show(false);draw()};
 document.getElementById("nl").onsubmit=function(e){e.preventDefault();document.getElementById("nlmsg").textContent="Merci ! Branchez ce formulaire à votre outil d'e-mailing pour recevoir les inscriptions."};
@@ -141,12 +167,8 @@ mentions:{t:"Mentions légales",h:"<p>Les champs entre crochets sont à complét
 confidentialite:{t:"Confidentialité et cookies",h:"<p>Dernière mise à jour : 30 septembre 2026.</p><h2>Données que nous collectons</h2><ul><li>Votre adresse e-mail, uniquement si vous vous inscrivez à la newsletter.</li><li>Des données de navigation anonymisées (pages vues, appareil, pays) si vous utilisez un outil de mesure d'audience.</li></ul><h2>Publicité et cookies</h2><p>Nous utilisons Google AdSense pour afficher des publicités. Google et ses partenaires peuvent utiliser des cookies pour diffuser des annonces selon vos visites sur ce site et d'autres sites. Vous choisissez d'accepter ou de refuser ces cookies dans la fenêtre de consentement affichée lors de votre première visite, et vous pouvez modifier ce choix à tout moment.</p><p>Pour en savoir plus : policies.google.com/technologies/partner-sites. Pour régler la personnalisation des annonces : adssettings.google.com.</p><h2>Newsletter</h2><p>Votre e-mail sert uniquement à vous envoyer la newsletter. Chaque message contient un lien de désinscription.</p><h2>Vos droits</h2><p>Vous pouvez demander l'accès, la rectification ou la suppression de vos données en écrivant à francoiskipili54@gmail.com. Vous pouvez aussi saisir l'autorité de protection des données de votre pays (en France, la CNIL).</p><h2>Durée de conservation</h2><p>Les e-mails sont conservés jusqu'à votre désinscription. [Précisez la durée pour les autres données.]</p>"},
 contact:{t:"Contact",h:"<p>Une question, une correction à signaler, une proposition de partenariat ? Écrivez-nous, nous répondons sous quelques jours.</p><p><a href=\"mailto:francoiskipili54@gmail.com\">francoiskipili54@gmail.com</a></p>"}
 };
-function page(k){var p=PG[k];rd.classList.add("plain");document.getElementById("rtag").textContent="";document.getElementById("rtitle").textContent=p.t;document.getElementById("rbody").innerHTML=p.h;document.title=p.t+" – Plein Cadre";show(true);window.scrollTo(0,0)}
+function page(k){var p=PG[k];rd.classList.add("plain");document.getElementById("rtag").textContent="";document.getElementById("rtitle").textContent=p.t;document.getElementById("rbody").innerHTML=p.h;document.title=p.t+" – FK TAKEOFF NEWS";show(true);window.scrollTo(0,0)}
 document.querySelectorAll("[data-p]").forEach(function(e){e.onclick=function(ev){ev.preventDefault();page(e.dataset.p)}});
-fetch('/content/articles.json').then(function(r){if(!r.ok)throw new Error('no cms content');return r.json()}).then(function(data){
-  var items=Array.isArray(data)?data:(data.articles||[]);
-  if(Array.isArray(items)&&items.length){items.slice().reverse().forEach(function(x){A.unshift({c:x.category||'Actualités',t:x.title||'Sans titre',d:x.summary||'',b:'<p>'+((x.body||'').replace(/</g,'&lt;'))+'</p>',image:x.image||''})});draw()}
-}).catch(function(){/* Les articles intégrés restent affichés si le fichier CMS n'existe pas encore. */});
 draw();
 </script>
 </body>
